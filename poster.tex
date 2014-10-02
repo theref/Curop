@@ -29,6 +29,13 @@
 \usepackage{times} % Use the times font
 %\usepackage{palatino} % Uncomment to use the Palatino font
 
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{trees}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+
 \usepackage{graphicx} % Required for including images
 \graphicspath{{figures/}} % Location of the graphics files
 \usepackage{booktabs} % Top and bottom rules for table
@@ -64,7 +71,7 @@
 
 %----------------------------------------------------------------------------------------
 
-\begin{multicols}{3} % This is how many columns your poster will be broken into, a poster with many figures may benefit from less columns whereas a text-heavy poster benefits from more
+\begin{multicols}{2} % This is how many columns your poster will be broken into, a poster with many figures may benefit from less columns whereas a text-heavy poster benefits from more
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
@@ -72,11 +79,33 @@
 
 \color{Navy} % Navy color for the abstract
 
-\begin{abstract}
-
-Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam ut elit sit amet metus lobortis consequat sit amet in libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel sem magna. Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu. Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
-
-\end{abstract}
+\begin{figure}[H]
+    \begin{center}
+        \tikzstyle{level 1}=[level distance=7cm, sibling distance=5cm]
+        \tikzstyle{level 2}=[level distance=7cm, sibling distance=5cm]
+        \tikzstyle{player} = [text width=5em, draw, text centered, rectangle, fill=blue!20, inner sep=1pt]
+        \tikzstyle{nature} = [minimum width=3pt,circle,  draw, fill=red!20, inner sep=1pt]
+        \tikzstyle{end} = [circle, minimum width=3pt, fill, inner sep=0pt, right]
+        \tikzstyle{corner} = [inner sep=0pt, outer sep=0pt, draw,circle]
+        \begin{tikzpicture}[grow=right, sloped, scale=.6]
+            \node[player]{Hospital 1}
+            child {node [corner] (A1) {} node [right=2pt]{$C^{(1)} - 1$} }
+            child {node [corner] (A2) {} node [right=2pt] {$1$} edge from parent node[above] {$\color{blue}{c^{(1)}}$}} ;
+            \draw [bend right, dashed] (A1) to (A2);
+            \node (B3) [player,right=3pt] at ($(A1)!0.5!(A2)$) {Hospital 2}
+            child {node [corner] (A3) {} node [right=2pt]{$C^{(2)} - 1$} }
+            child {node [corner] (A4) {} node [right=2pt] {$1$} edge from parent node[above] {$\color{red}{c^{(2)}}$}} ;
+            \draw [bend right] (A3) to (A4);
+            \node (e) [player,right=3pt] at ($(A3)!0.5!(A4)$) {Ambulance}
+            child {node [corner] (A5) {} node [right=2pt]{$\Lambda$} }
+            child {node [corner] (A6) {}  node [right=2pt] {$0$}edge from parent node[above] {$\lambda_1$}} ;
+            \draw [bend right] (A5) to (A6);
+            \node (e) [end,right=7pt] at ($(A5)!0.5!(A6)$) {};
+            \node [right] at (e) {$(|u_1^{(1)}-u_2^{(1)}|,|u_1^{(2)}-u_2^{(2)}|,|w^{(1)}-w^{(2)}|)$};
+        \end{tikzpicture}
+        \caption{Underlying Stackelberg Game}\label{fig:stackelberg_game}
+    \end{center}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
