@@ -32,7 +32,7 @@
 
 \begin{minipage}[b]{0.6\linewidth}
 \veryHuge \color{NavyBlue} \textbf{Building Game Theoretical Software in a Research Environment} \color{Black}\\ % Title
-\Huge\textit{An Exploration of Complexity}\\[1cm] % Subtitle
+\Huge\textit{More info here}\\[1cm] % Subtitle
 \huge \textbf{James Campbell \& Dr Vince(nt) Knight}\\ % Author(s)
 \huge Department of Mathematics\\ % University/organization
 \end{minipage}
@@ -46,7 +46,6 @@
 \vspace{1cm}
 \begin{multicols}{2}
 
-\color{Navy} % Navy color for the abstract
 
 \begin{figure}[H]
     \begin{center}
@@ -76,14 +75,8 @@
     \end{center}
 \end{figure}
 
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
-
-\color{SaddleBrown} % SaddleBrown color for the introduction
 
 \section*{Stackelberg game, MC, NFG}
-
 The issue of waiting times for ambulances at at two hospitals can be modelled as a simple Stackelberg game where each hospital has its own AE and Ward.
 Patients arrive at the AE at rate $\lambda$ and if there is space in the queue they join it.
 If there is no space in the queue that patient is lost.
@@ -92,24 +85,13 @@ A proportion, $p$, of patients are then dismissed immediately.
 Those who are not dismissed are admitted to the ward if there is space, otherwise they will wait in AE, continuing to occupy a bed.
 Once admitted, they are treated in the ward with a service time $\hat{\mu}$ and then dismissed without delay.
 
-%----------------------------------------------------------------------------------------
-%	OBJECTIVES
-%----------------------------------------------------------------------------------------
-
-\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
 
 \section*{Sage OSS, Matching/Co-operative games}
+Sage: "Creating a viable free open source alternative to Magma, Maple, Mathematica and Matlab".
+Ref?
+The areas of Game Theory that we decided to implement in Sage were Matching Games, Co-operative Games and Normal Form Games.
 
-\begin{enumerate}
-\item Lorem ipsum dolor sit amet, consectetur.
-\item Nullam at mi nisl. Vestibulum est purus, ultricies cursus volutpat sit amet, vestibulum eu.
-\item Praesent tortor libero, vulputate quis elementum a, iaculis.
-\item Phasellus a quam mauris, non varius mauris. Fusce tristique, enim tempor varius porta, elit purus commodo velit, pretium mattis ligula nisl nec ante.
-\item Ut adipiscing accumsan sapien, sit amet pretium.
-\item Estibulum est purus, ultricies cursus volutpat
-\item Nullam at mi nisl. Vestibulum est purus, ultricies cursus volutpat sit amet, vestibulum eu.
-\item Praesent tortor libero, vulputate quis elementum a, iaculis.
-\end{enumerate}
+
 
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND METHODS
@@ -123,29 +105,9 @@ Fusce magna risus, molestie ut porttitor in, consectetur sed mi. Vestibulum ante
 
 \section*{Q-Learning}
 
-Nulla vel nisl sed mauris auctor mollis non sed.
-
-\begin{equation}
-E = mc^{2}
-\label{eqn:Einstein}
-\end{equation}
-
-Curabitur mi sem, pulvinar quis aliquam rutrum. (1) edf (2)
-, $\Omega=[-1,1]^3$, maecenas leo est, ornare at. $z=-1$ edf $z=1$ sed interdum felis dapibus sem. $x$ set $y$ ytruem.
-Turpis $j$ amet accumsan enim $y$-lacina;
-ref $k$-viverra nec porttitor $x$-lacina.
-
-Vestibulum ac diam a odio tempus congue. Vivamus id enim nisi:
-
-\begin{eqnarray}
-\cos\bar{\phi}_k Q_{j,k+1,t} + Q_{j,k+1,x}+\frac{\sin^2\bar{\phi}_k}{T\cos\bar{\phi}_k} Q_{j,k+1} &=&\nonumber\\
--\cos\phi_k Q_{j,k,t} + Q_{j,k,x}-\frac{\sin^2\phi_k}{T\cos\phi_k} Q_{j,k}\label{edgek}
-\end{eqnarray}
-and
-\begin{eqnarray}
-\cos\bar{\phi}_j Q_{j+1,k,t} + Q_{j+1,k,y}+\frac{\sin^2\bar{\phi}_j}{T\cos\bar{\phi}_j} Q_{j+1,k}&=&\nonumber \\
--\cos\phi_j Q_{j,k,t} + Q_{j,k,y}-\frac{\sin^2\phi_j}{T\cos\phi_j} Q_{j,k}.\label{edgej}
-\end{eqnarray}
+Q-learning is the process of assigning a state-action value or Q-value to the combination of being in a state, taking an action and observing a reward.
+The Q-value is then updated by assessing the maximum value of being in the new state.
+The higher the Q-value the more likely a player is to choose action $a$ when in state $s$.
 
 Nulla sed arcu arcu. Duis et ante gravida orci venenatis tincidunt. Fusce vitae lacinia metus. Pellentesque habitant morbi. $\mathbf{A}\underline{\xi}=\underline{\beta}$ Vim $\underline{\xi}$ enum nidi $3(P+2)^{2}$ lacina. Id feugain $\mathbf{A}$ nun quis; magno. Fusce convallis rutrum turpis, quis aliquet enim accumsan id. Vestibulum ullamcorper porttitor convallis. Integer sagittis interdum malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed adipiscing tristique orci at ullamcorper. Morbi accumsan, urna et porttitor pulvinar, lacus risus dignissim massa. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
 
