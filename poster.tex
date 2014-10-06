@@ -1,24 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% a0poster Landscape Poster
-% LaTeX Template
-% Version 1.0 (22/06/13)
-%
-% The a0poster class was created by:
-% Gerlinde Kettl and Matthias Weiser (tex@kettl.de)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
-\documentclass[a0,landscape]{a0poster}
+\documentclass[a1,landscape]{a0poster}
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
 \columnsep=100pt % This is the amount of white space between the columns in the poster
@@ -41,7 +21,7 @@
 \usepackage{booktabs} % Top and bottom rules for table
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
-\usepackage{wrapfig} % Allows wrapping text around tables and figures
+\usepackage{wrapfig}
 
 \begin{document}
 
@@ -49,13 +29,7 @@
 %	POSTER HEADER
 %----------------------------------------------------------------------------------------
 
-% The header is divided into three boxes:
-% The first is 55% wide and houses the title, subtitle, names and university/organization
-% The second is 25% wide and houses contact information
-% The third is 19% wide and houses a logo for your university/organization or a photo of you
-% The widths of these boxes can be easily edited to accommodate your content as you see fit
-
-\begin{minipage}[b]{0.75\linewidth}
+\begin{minipage}[b]{0.7\linewidth}
 \veryHuge \color{NavyBlue} \textbf{Building Game Theoretical Software in a Research Environment} \color{Black}\\ % Title
 \Huge\textit{An Exploration of Complexity}\\[1cm] % Subtitle
 \huge \textbf{James Campbell \& Dr Vince(nt) Knight}\\ % Author(s)
@@ -63,19 +37,13 @@
 \end{minipage}
 %
 %
-\begin{minipage}[b]{0.19\linewidth}
-\includegraphics[width=15cm]{images/logo.eps} % Logo or a photo of you, adjust its dimensions here
+\begin{minipage}[b]{0.3\linewidth}
+\centering
+\includegraphics[width=15cm]{images/logo.eps}
 \end{minipage}
 
-\vspace{1cm} % A bit of extra whitespace between the header and poster content
-
-%----------------------------------------------------------------------------------------
-
-\begin{multicols}{2} % This is how many columns your poster will be broken into, a poster with many figures may benefit from less columns whereas a text-heavy poster benefits from more
-
-%----------------------------------------------------------------------------------------
-%	ABSTRACT
-%----------------------------------------------------------------------------------------
+\vspace{1cm}
+\begin{multicols}{2}
 
 \color{Navy} % Navy color for the abstract
 
@@ -113,13 +81,15 @@
 
 \color{SaddleBrown} % SaddleBrown color for the introduction
 
-\section*{Stackelberf game, MC, NFG}
+\section*{Stackelberg game, MC, NFG}
 
-Aliquam non lacus dolor, \textit{a aliquam quam} . Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla in nibh mauris. Donec vel ligula nisi, a lacinia arcu. Sed mi dui, malesuada vel consectetur et, egestas porta nisi. Sed eleifend pharetra dolor, et dapibus est vulputate eu. \textbf{Integer faucibus elementum felis vitae fringilla.} In hac habitasse platea dictumst. Duis tristique rutrum nisl, nec vulputate elit porta ut. Donec sodales sollicitudin turpis sed convallis. Etiam mauris ligula, blandit adipiscing condimentum eu, dapibus pellentesque risus.
-
-\textit{Aliquam auctor}, metus id ultrices porta, risus enim cursus sapien, quis iaculis sapien tortor sed odio. Mauris ante orci, euismod vitae tincidunt eu, porta ut neque. Aenean sapien est, viverra vel lacinia nec, venenatis eu nulla. Maecenas ut nunc nibh, et tempus libero. Aenean vitae risus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
-
-Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique \textbf{purus urna nec nibh}.
+The issue of waiting times for ambulances at at two hospitals can be modelled as a simple Stackelberg game where each hospital has its own AE and Ward.
+Patients arrive at the AE at rate $\lambda$ and if there is space in the queue they join it.
+If there is no space in the queue that patient is lost.
+Each patient has an AE service time, $\mu$, which represents how long their treatment in AE will last.
+A proportion, $p$, of patients are then dismissed immediately.
+Those who are not dismissed are admitted to the ward if there is space, otherwise they will wait in AE, continuing to occupy a bed.
+Once admitted, they are treated in the ward with a service time $\hat{\mu}$ and then dismissed without delay.
 
 %----------------------------------------------------------------------------------------
 %	OBJECTIVES
