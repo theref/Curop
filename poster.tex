@@ -23,6 +23,8 @@
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{amsfonts, amsmath, amsthm, amssymb}
 \usepackage{wrapfig}
+\usepackage{subcaption}
+
 
 \begin{document}
 
@@ -36,7 +38,7 @@
 %
 \begin{minipage}[b]{0.3\linewidth}
 \centering
-\includegraphics[width=15cm]{images/logo.eps}
+\includegraphics[width=15cm]{Images/logo.eps}
 \end{minipage}
 
 \vspace{1cm}
@@ -45,7 +47,7 @@
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\linewidth]{images/sage-banner-02.png}
+\includegraphics[width=0.9\linewidth]{Images/sage-banner-02.png}
 \end{figure}
 
 \color{Brown}
@@ -79,7 +81,7 @@ Once admitted, they are treated in the ward with a service time $\hat{\mu}$ and 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\linewidth]{images/{12-11-12-1.0-0.2-0.7}.pdf}
+\includegraphics[width=0.9\linewidth]{Images/{12-11-12-1.0-0.2-0.7}.pdf}
 \end{figure}
 
 \color{Olive}
@@ -98,6 +100,39 @@ The process is that an agent starts off in a particular state, makes a decision,
 Q-learning is the process of assigning a state-action value or Q-value to the combination of being in a state, taking an action and observing a reward.
 The Q-value is then updated by assessing the maximum value of being in the new state.
 The higher the Q-value the more likely a player is to choose action $a$ when in state $s$.
+
+
+\begin{figure}[H]
+    \centering
+        \begin{subfigure}{.4\linewidth}
+            \includegraphics[width=\textwidth]{./Images/{10.000-15.000-12.000-4.000-0.400-1.000-0.200-40000.000-10000.000-32-markov_chain}.pdf}
+        \caption{Markov Chain for $\Lambda=4$}\label{fig:markov_chain_example_pdf_mc_4}
+        \end{subfigure}
+        \begin{subfigure}{.4\linewidth}
+            \includegraphics[width=\textwidth]{./Images/{10.000-15.000-12.000-4.000-0.400-1.000-0.200-40000.000-10000.000-32-simulation}.pdf}
+        \caption{Simulation for $\Lambda=4$}\label{fig:markov_chain_example_pdf_sim_4}
+        \end{subfigure}
+        \\
+        \begin{subfigure}{.4\linewidth}
+            \includegraphics[width=\textwidth]{./Images/{10.000-15.000-12.000-4.500-0.400-1.000-0.200-40000.000-10000.000-32-markov_chain}.pdf}
+        \caption{Markov Chain for $\Lambda=4.5$}\label{fig:markov_chain_example_pdf_mc_4.5}
+        \end{subfigure}
+        \begin{subfigure}{.4\linewidth}
+            \includegraphics[width=\textwidth]{./Images/{10.000-15.000-12.000-4.500-0.400-1.000-0.200-40000.000-10000.000-32-simulation}.pdf}
+        \caption{Simulation for $\Lambda=4.5$}\label{fig:markov_chain_example_pdf_sim_4.5}
+        \end{subfigure}
+        \\
+        \begin{subfigure}{.4\linewidth}
+            \includegraphics[width=\textwidth]{./Images/{10.000-15.000-12.000-5.000-0.400-1.000-0.200-40000.000-10000.000-32-markov_chain}.pdf}
+        \caption{Markov Chain for $\Lambda=5$}\label{fig:markov_chain_example_pdf_mc_5}
+        \end{subfigure}
+        \begin{subfigure}{.4\linewidth}
+            \includegraphics[width=\textwidth]{./Images/{10.000-15.000-12.000-5.000-0.400-1.000-0.200-40000.000-10000.000-32-simulation}.pdf}
+        \caption{Simulation for $\Lambda=5$}\label{fig:markov_chain_example_pdf_sim_5}
+        \end{subfigure}
+        \\
+    \caption{Theoretical and simulated distribution of $\pi$ for $\Lambda\in\{4,4.5,5\}$} \label{fig:markov_chain_example_pdf_2}
+\end{figure}
 
 \end{multicols}
 \end{document}
