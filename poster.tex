@@ -40,36 +40,36 @@
 \end{minipage}
 
 \vspace{1cm}
-\begin{multicols}{2}
+\begin{multicols}{3}
 
 
-\begin{figure}[H]
-    \begin{center}
-        \tikzstyle{level 1}=[level distance=7cm, sibling distance=5cm]
-        \tikzstyle{level 2}=[level distance=7cm, sibling distance=5cm]
-        \tikzstyle{player} = [text width=5em, draw, text centered, rectangle, fill=blue!20, inner sep=1pt]
-        \tikzstyle{nature} = [minimum width=3pt,circle,  draw, fill=red!20, inner sep=1pt]
-        \tikzstyle{end} = [circle, minimum width=3pt, fill, inner sep=0pt, right]
-        \tikzstyle{corner} = [inner sep=0pt, outer sep=0pt, draw,circle]
-        \begin{tikzpicture}[grow=right, sloped, scale=.6]
-            \node[player]{Hospital 1}
-            child {node [corner] (A1) {} node [right=2pt]{$C^{(1)} - 1$} }
-            child {node [corner] (A2) {} node [right=2pt] {$1$} edge from parent node[above] {$\color{blue}{c^{(1)}}$}} ;
-            \draw [bend right, dashed] (A1) to (A2);
-            \node (B3) [player,right=3pt] at ($(A1)!0.5!(A2)$) {Hospital 2}
-            child {node [corner] (A3) {} node [right=2pt]{$C^{(2)} - 1$} }
-            child {node [corner] (A4) {} node [right=2pt] {$1$} edge from parent node[above] {$\color{red}{c^{(2)}}$}} ;
-            \draw [bend right] (A3) to (A4);
-            \node (e) [player,right=3pt] at ($(A3)!0.5!(A4)$) {Ambulance}
-            child {node [corner] (A5) {} node [right=2pt]{$\Lambda$} }
-            child {node [corner] (A6) {}  node [right=2pt] {$0$}edge from parent node[above] {$\lambda_1$}} ;
-            \draw [bend right] (A5) to (A6);
-            \node (e) [end,right=7pt] at ($(A5)!0.5!(A6)$) {};
-            \node [right] at (e) {$(|u_1^{(1)}-u_2^{(1)}|,|u_1^{(2)}-u_2^{(2)}|,|w^{(1)}-w^{(2)}|)$};
-        \end{tikzpicture}
-        \caption{Underlying Stackelberg Game}\label{fig:stackelberg_game}
-    \end{center}
-\end{figure}
+% \begin{figure}[H]
+%     \begin{center}
+%         \tikzstyle{level 1}=[level distance=7cm, sibling distance=5cm]
+%         \tikzstyle{level 2}=[level distance=7cm, sibling distance=5cm]
+%         \tikzstyle{player} = [text width=5em, draw, text centered, rectangle, fill=blue!20, inner sep=1pt]
+%         \tikzstyle{nature} = [minimum width=3pt,circle,  draw, fill=red!20, inner sep=1pt]
+%         \tikzstyle{end} = [circle, minimum width=3pt, fill, inner sep=0pt, right]
+%         \tikzstyle{corner} = [inner sep=0pt, outer sep=0pt, draw,circle]
+%         \begin{tikzpicture}[grow=right, sloped, scale=.6]
+%             \node[player]{Hospital 1}
+%             child {node [corner] (A1) {} node [right=2pt]{$C^{(1)} - 1$} }
+%             child {node [corner] (A2) {} node [right=2pt] {$1$} edge from parent node[above] {$\color{blue}{c^{(1)}}$}} ;
+%             \draw [bend right, dashed] (A1) to (A2);
+%             \node (B3) [player,right=3pt] at ($(A1)!0.5!(A2)$) {Hospital 2}
+%             child {node [corner] (A3) {} node [right=2pt]{$C^{(2)} - 1$} }
+%             child {node [corner] (A4) {} node [right=2pt] {$1$} edge from parent node[above] {$\color{red}{c^{(2)}}$}} ;
+%             \draw [bend right] (A3) to (A4);
+%             \node (e) [player,right=3pt] at ($(A3)!0.5!(A4)$) {Ambulance}
+%             child {node [corner] (A5) {} node [right=2pt]{$\Lambda$} }
+%             child {node [corner] (A6) {}  node [right=2pt] {$0$}edge from parent node[above] {$\lambda_1$}} ;
+%             \draw [bend right] (A5) to (A6);
+%             \node (e) [end,right=7pt] at ($(A5)!0.5!(A6)$) {};
+%             \node [right] at (e) {$(|u_1^{(1)}-u_2^{(1)}|,|u_1^{(2)}-u_2^{(2)}|,|w^{(1)}-w^{(2)}|)$};
+%         \end{tikzpicture}
+%         \caption{Underlying Stackelberg Game}\label{fig:stackelberg_game}
+%     \end{center}
+% \end{figure}
 
 
 \color{Brown}
@@ -78,6 +78,11 @@ Sage: "Creating a viable free open source alternative to Magma, Maple, Mathemati
 Ref?
 Sage is Open Source, which means that anyone can contribute to it's upkeep and improvement, but only after a stringent review scheme.
 We settled on three project to add to Sage, one of which has already been included in a recent release.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{images/sage-banner-02.png}
+\end{figure}
 
 \section*{Our Contribution}
 The areas of Game Theory that we decided to implement in Sage were Matching Games, Co-operative Games and Normal Form Games.
@@ -101,6 +106,10 @@ A proportion, $p$, of patients are then dismissed immediately.
 Those who are not dismissed are admitted to the ward if there is space, otherwise they will wait in AE, continuing to occupy a bed.
 Once admitted, they are treated in the ward with a service time $\hat{\mu}$ and then dismissed without delay.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{images/{12-11-12-1.0-0.2-0.7}.pdf}
+\end{figure}
 
 \color{Olive}
 \section*{Limitations of MC}
