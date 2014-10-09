@@ -88,6 +88,8 @@ We normally look for stable matching where no player has any incentive to change
     \draw (a) -- (B);
     \draw (b) -- (C);
 \end{tikzpicture}
+\caption{A stable matching}
+\label{fig:matching_game}
 \end{figure}
 
 Co-operative Games are used in situations where players each contribute to a system and those seperate contributions require their own payoff.
@@ -110,17 +112,25 @@ A Markov Chain is ideal for this because the system is memoryless, ie. at any on
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{Images/{12-11-12-1.0-0.2-0.7}.pdf}
+\caption{Theoretical and simulated expected wait times}
+\label{fig:wait_times}
 \end{figure}
 
 \color{Olive}
 \section*{Validation}
 One of our most important jobs was to validate the Markov Chain that we had created.
-This was achieved by comparing various results from a Monte Carlo simulation with analytical results from the Markov Chain.
+This was achieved by comparing various results from a Monte Carlo simulation with analytical results from the Markov Chain.\\
+\\
+One way of doing this was to compare the Mean Expected wait for different arrival rate $\lambda$.
+In fig \ref{fig:wait_times} the blue is our analytical approach and the box plots show simulated data that we recorded.\\
+\\
+Fig \ref{fig:markov_chain_example_pdf_2} shows the probability of being in state $(i,j)$ for varying $\lambda$.
+Again it compares analytical results to simulated ones.
 
 \section*{Limitations of MC}
 The main problem with the Markov Chain approach is that calculating the payoffs required for the associated Normal Form Game is very CPU intensive.
 It therefore required use of the Cardiff Univeristy supercomputer, RAVEN.
-If the Normal Form Games themselves became too large, solving them to obatin Nash Equilibria could also take a significant amount of time.
+If the Normal Form Games themselves became too large, solving them to obatin Nash Equilibria could also take a significant amount of time.\\
 \\
 It also assumes that the ambulances do not observe the system.
 
@@ -165,7 +175,8 @@ The higher the Q-value the more likely a player is to choose action $a$ when in 
         \caption{Simulation for $\Lambda=5$}\label{fig:markov_chain_example_pdf_sim_5}
         \end{subfigure}
         \\
-    \caption{Theoretical and simulated distribution of $\pi$ for $\Lambda\in\{4,4.5,5\}$} \label{fig:markov_chain_example_pdf_2}
+    \caption{Theoretical and simulated distribution of $\pi$ for $\Lambda\in\{4,4.5,5\}$}
+    \label{fig:markov_chain_example_pdf_2}
 \end{figure}
 
 \end{multicols}
