@@ -30,7 +30,7 @@
 
 \begin{minipage}[b]{0.7\linewidth}
 \veryHuge \color{NavyBlue} \textbf{Building Game Theoretical Software in a Research Environment} \color{Black}\\ % Title
-\Huge\textit{And applying it to healthcare modelling}\\[1cm] % Subtitle
+\Huge\textit{With an application to healthcare modelling}\\[1cm] % Subtitle
 \huge \textbf{James Campbell \& Dr Vince(nt) Knight}\\ % Author(s)
 \huge School of Mathematics\\ % University/organization
 \end{minipage}
@@ -58,8 +58,13 @@ Sage is Open Source, which means that anyone can contribute to it's upkeep and i
 We settled on three projects to add to Sage, one of which has already been included in a recent release.
 
 \section*{Our Contribution}
-The areas of Game Theory that we decided to implement in Sage were Matching Games, Co-operative Games and Normal Form Games.
-Matching Games allow us to solve problems where players need to be paired with each other, but they have their own prefences.
+\begin{itemize}
+    \item Normal Form Games;
+    \item Matching Games;
+    \item Cooperative Games.
+\end{itemize}
+
+Matching Games allow us to solve problems where players need to be paired with each other, but they have their own preferences.
 We normally look for stable matching where no player has any incentive to change their pairing.
 
 \begin{figure}[H]
@@ -92,35 +97,44 @@ We normally look for stable matching where no player has any incentive to change
 \label{fig:matching_game}
 \end{figure}
 
-Co-operative Games are used in situations where players each contribute to a system and those seperate contributions require their own payoff.
+Co-operative Games are used in situations where players each contribute to a system and those separate contributions require their own payoff.
 Normal Form Games involve players choosing different strategies against each other and obtaining a payoff.
 Nash equilibria occur when no player has any incentive to change which strategy they play.
 
-\begin{figure}[H]
-\color{black}
-    \centering
-    \begin{tikzpicture}
-        \draw (0,1) rectangle (2,3);
-        \draw (3,1) rectangle (5,3);
-
-        \node at (1,1.5) [circle, fill, color=blue] {};
-        \node (blocked) at (1,2.5) [circle, fill, color=red] {};
-
-        \node at (-1,2) [circle, fill, color=blue] {};
-        \node at (-2,2) [circle, fill, color=blue] {};
-
-        \node at (4,1.5) [circle, fill, color=red] {};
-        \node at (4,2.5) [circle, fill, color=red] {};
-
-        \node (label) at (3,4) {blocked};
-        \draw [->] (label) -- (blocked);
-    \end{tikzpicture}
-    \caption{The state $(3,3)\in S$ for $c_1=c_2=2$ and $N=2$ with one individual blocked in the first station.}\label{fig:state}
-\end{figure}
-
 \color{Goldenrod}
 \section*{Stackelberg game}
-The issue of waiting times for ambulances at at two hospitals can be modelled as a simple Stackelberg game where each hospital has its own AE and Ward.
+The issue of waiting times for ambulances at at two hospitals can be modelled as a 3 player Stackelberg game where each hospital has its own AE and Ward.
+
+
+{\color{black}
+\begin{figure}[H]
+    \begin{center}
+        \tikzstyle{level 1}=[level distance=8.5cm, sibling distance=6.5cm]
+        \tikzstyle{level 2}=[level distance=8.5cm, sibling distance=4cm]
+        \tikzstyle{player} = [draw, text centered, rectangle, fill=blue!20, inner sep=1pt]
+        \tikzstyle{nature} = [minimum width=3pt,circle,  draw, fill=red!20, inner sep=1pt]
+        \tikzstyle{end} = [circle, minimum width=3pt, fill, inner sep=0pt, right]
+        \tikzstyle{corner} = [inner sep=0pt, outer sep=0pt, draw,circle]
+        \begin{tikzpicture}[grow=right, sloped, scale=.6]
+            \node[player]{H1}
+            child {node [corner] (A1) {} node [right=2pt]{$C^{(1)} - 1$} }
+            child {node [corner] (A2) {} node [right=2pt] {$1$} edge from parent node[above] {$\color{blue}{c^{(1)}}$}} ;
+            \draw [bend right, dashed] (A1) to (A2);
+            \node (B3) [player,right=3pt] at ($(A1)!0.5!(A2)$) {H2}
+            child {node [corner] (A3) {} node [right=2pt]{$C^{(2)} - 1$} }
+            child {node [corner] (A4) {} node [right=2pt] {$1$} edge from parent node[above] {$\color{red}{c^{(2)}}$}} ;
+            \draw [bend right] (A3) to (A4);
+            \node (e) [player,right=3pt] at ($(A3)!0.5!(A4)$) {A}
+            child {node [corner] (A5) {} node [right=2pt]{$\Lambda$} }
+            child {node [corner] (A6) {}  node [right=2pt] {$0$}edge from parent node[above] {$\lambda_1$}} ;
+            \draw [bend right] (A5) to (A6);
+            \node (e) [end,right=7pt] at ($(A5)!0.5!(A6)$) {};
+        \end{tikzpicture}
+        \caption{Underlying Stackelberg Game}\label{fig:stackelberg_game}
+    \end{center}
+\end{figure}
+}
+
 Patients arrive at the AE at rate $\lambda$ and if there is space in the queue they join it.
 If there is no space in the queue that patient is lost.
 Each patient has an AE service time, $\mu$, which represents how long their treatment in AE will last.
