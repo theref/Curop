@@ -135,6 +135,7 @@ The issue of waiting times for ambulances at at two hospitals can be modelled as
 \end{figure}
 }
 
+To be able to solve the game, a queueing model of the stochastic process associated with the hospital is required.
 Patients arrive at the AE at rate $\lambda$ and if there is space in the queue they join it.
 If there is no space in the queue that patient is lost.
 Each patient has an AE service rate, $\mu$, which represents how long their treatment in AE will last.
@@ -195,23 +196,20 @@ Again it compares analytical results to simulated ones.
 
 
 \section*{Limitations of the Markov Model}
-The main problem with the Markov Chain approach is that calculating the payoffs required for the associated Normal Form Game is very CPU intensive.
-It therefore required use of the Cardiff Univeristy supercomputer, RAVEN.
-If the Normal Form Games themselves became too large, solving them to obatin Nash Equilibria could also take a significant amount of time.\\
-\\
-It also assumes that the ambulances do not observe the system.
+The main problem with the Markov Chain approach is that calculating the payoffs required for the associated Normal Form Game is computationally expensive.
+It therefore required use of the Cardiff University supercomputer, RAVEN.
+This approach also assumes that the ambulances do not observe the system.
 
 
 \color{SteelBlue}
 \section*{Markov Decision Process}
-A Markov Decision Process is a model of decision making in a dynamic framework in which a decision maker makes decisions based on a particular system state \cite{puterman2009markov}.
-The process is that an agent starts off in a particular state, makes a decision, and then has a probabilistic transition whose probabilities may depend on the previous decision.
+A Markov Decision Process is a model of decision making in a dynamic framework in which a decision maker makes decisions based on a particular system state.
+The process is that an agent starts off in a particular state, makes a decision, and then has a probabilistic transition depending on the previous decision.
 
 \section*{Q-Learning}
 Q-learning is the process of assigning a state-action value or Q-value to the combination of being in a state, taking an action and observing a reward.
 The Q-value is then updated by assessing the maximum value of being in the new state.
 The higher the Q-value the more likely a player is to choose action $a$ when in state $s$.
-
 
 
 \end{multicols}
