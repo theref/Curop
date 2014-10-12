@@ -96,6 +96,28 @@ Co-operative Games are used in situations where players each contribute to a sys
 Normal Form Games involve players choosing different strategies against each other and obtaining a payoff.
 Nash equilibria occur when no player has any incentive to change which strategy they play.
 
+\begin{figure}[H]
+\color{black}
+    \centering
+    \begin{tikzpicture}
+        \draw (0,1) rectangle (2,3);
+        \draw (3,1) rectangle (5,3);
+
+        \node at (1,1.5) [circle, fill, color=blue] {};
+        \node (blocked) at (1,2.5) [circle, fill, color=red] {};
+
+        \node at (-1,2) [circle, fill, color=blue] {};
+        \node at (-2,2) [circle, fill, color=blue] {};
+
+        \node at (4,1.5) [circle, fill, color=red] {};
+        \node at (4,2.5) [circle, fill, color=red] {};
+
+        \node (label) at (3,4) {blocked};
+        \draw [->] (label) -- (blocked);
+    \end{tikzpicture}
+    \caption{The state $(3,3)\in S$ for $c_1=c_2=2$ and $N=2$ with one individual blocked in the first station.}\label{fig:state}
+\end{figure}
+
 \color{Goldenrod}
 \section*{Stackelberg game}
 The issue of waiting times for ambulances at at two hospitals can be modelled as a simple Stackelberg game where each hospital has its own AE and Ward.
