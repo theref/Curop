@@ -101,6 +101,35 @@ Co-operative Games are used in situations where players each contribute to a sys
 Normal Form Games involve players choosing different strategies against each other and obtaining a payoff.
 Nash equilibria occur when no player has any incentive to change which strategy they play.
 
+\begin{figure}[H]
+\color{black}
+\begin{verbatim}
+    def _is_NE(self, a, b, p1_support, p2_support, M1, M2):
+        # Check that supports are obeyed
+        if not (all([a[i] > 0 for i in p1_support]) and
+            all([b[j] > 0 for j in p2_support]) and
+            all([a[i] == 0 for i in range(len(a)) if i not in p1_support]) and
+            all([b[j] == 0 for j in range(len(b)) if j not in p2_support])):
+            return False
+
+        # Check that have pair of best responses
+        p1_payoffs = [sum(v * row[i] for i, v in enumerate(b)) for row in M1.rows()]
+        p2_payoffs = [sum(v * col[j] for j, v in enumerate(a)) for col in M2.columns()]
+
+        if p1_payoffs.index(max(p1_payoffs)) not in p1_support:
+            return False
+        if p2_payoffs.index(max(p2_payoffs)) not in p2_support:
+            return False
+
+        return True
+\end{verbatim}
+\caption{Example Code}
+\label{fig:check_NE}
+\end{figure}
+
+Fig \ref{fig:check_NE} is a function we wrote to check whether two support vectors are in fact Nash Equilibrium.
+
+
 \color{Goldenrod}
 \section*{Stackelberg game}
 The issue of waiting times for ambulances at at two hospitals can be modelled as a 3 player Stackelberg game where each hospital has its own AE and Ward.
