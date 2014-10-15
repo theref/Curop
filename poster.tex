@@ -10,6 +10,8 @@
 \renewcommand\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
 
+
+
 \usepackage{float}
 \usepackage{tikz}
 \usetikzlibrary{patterns}
@@ -188,7 +190,6 @@ A Markov Chain is ideal for this because the system is memoryless, ie. at any on
 Validation of the Markov Chain model was carried out by comparing various results from a Discrete Event simulation with analytical results from the Markov Chain.\\
 \\
 In Fig \ref{fig:wait_times} the blue is the analytical approach and the box plots show simulated data.\\
-\\
 Fig \ref{fig:markov_chain_example_pdf_2} shows the probability of being in state $(i,j)$ for varying $\lambda$.
 Again it compares analytical results to simulated ones.
 
@@ -239,7 +240,14 @@ The process is that an agent starts off in a particular state, makes a decision,
 Q-learning is the process of assigning a state-action value or Q-value to the combination of being in a state, taking an action and observing a reward.
 The Q-value is then updated by assessing the maximum value of being in the new state.
 The higher the Q-value the more likely a player is to choose action $a$ when in state $s$.
+The effect of using Q-Learning with the ambulances can be seen in Fig \ref{fig:q_learning}.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{Images/q_learning.png}
+\caption{The effect of Q-learning}
+\label{fig:q_learning}
+\end{figure}
 
 \end{multicols}
 \end{document}
